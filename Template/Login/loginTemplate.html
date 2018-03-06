@@ -1,0 +1,31 @@
+
+<div class="login col-sm-5 col-md-offset-4">
+       <h2>Login</h2>
+        <form name="login" role="form" novalidate>
+            <span>
+           <span class="form-group" ng-class="{'has-error': login.asid.$invalid && login.asid.$touched}">
+                <label for="asid">Associate ID</label>
+                <br>
+                <input type="email" class="form-control" name="asid" ng-model="loginCtrl.asid" ng-minlength="loginCtrl.min" ng-maxlength="loginCtrl.max" ng-model-options= "{updateOn : 'blur'}" required/> 
+                <span class="help-block" ng-show="login.asid.$error.minlength || login.asid.$error.maxlength">Please enter a valid Associate Number</span>
+                <span class="help-block" ng-show="login.asid.$touched && login.asid.$error.required">Please enter your Associate ID</span>
+            </span >
+            <span class="form-group" ng-class="{'has-error': login.Password.$touched && login.Password.$invalid}">
+                <label for="Password">Password</label>
+                <br>
+                <input type ="Password" name="Password" class="form-control" ng-model="loginCtrl.password" ng-required="true"/>
+                <span class="help-block" ng-show="login.Password.$touched && login.Password.$error.required">Password is required</span>
+            </span>
+            </span>
+                <br>
+            <button ng-disabled="login.$invalid" ng-click="loginCtrl.submitLogin()" id="submit" class="btn btn-primary">Submit</button>
+            <div ng-if="loginCtrl.errorLogin">
+                Invalid Username and Password
+            </div>
+        </form>
+    </div>
+    <div ng-if="loginCtrl.errorLogin">
+        <div class='alert alert-danger'>
+            <span>Wrong Credentials</span>
+        </div>
+    </div>

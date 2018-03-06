@@ -1,0 +1,27 @@
+.register{
+    background-color: #f2f2f2;
+    border:1px solid #ccc;
+    padding : 20px;
+    top : 20px;
+    margin-top: 90px;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.2);
+} 
+.register label{
+    color: darkgreen;
+    font-size: 15px;
+    font-weight: bold;
+}
+.register h2{
+    color: chocolate;
+    font-weight: bold;
+}
+body
+{
+    letter-spacing: 1px;
+    text-rendering: optimizeLegibility;
+}
+.Rsuccess{
+    margin-top: 50px;
+    float:right;
+    line-height: 4;
+}

@@ -1,0 +1,48 @@
+<div ng-if="LoginService.errorLogin = 'false'">
+<div class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="changePassword">Change Password</a></li>
+                <li><a ui-sref="bookedSlot">View Booked Slots</a></li>                
+                <li ng-if="delUserCtrl.adminRight == '1'" ><a ui-sref="register">Add User</a></li>
+                <li ng-if="delUserCtrl.adminRight == '1'" ><a ui-sref="deleteUser">Delete User</a></li>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <li>Welcome<br>{{delUserCtrl.asid}}</li>
+                <li><a ng-click="delUserCtrl.logOut()">Log Out</a></li>
+            </div>
+        </div>
+</div>
+<div>
+<form>
+    <div class="formSearch">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+        <input type="text" placeholder="Search" ng-model="searchName">
+      </div>      
+    </div>
+  </form>
+    <table class="deleteUSer">
+        <tr>
+            <th>Name</th>
+            <th>Associate ID</th>
+            <th>Admin Right</th>
+            <th>Delete User</th>
+        </tr>
+
+        <tr ng-repeat = "userDetail in delUserCtrl.userDetails | filter:searchName">
+            <td>{{userDetail.name}}</td>
+            <td>{{userDetail.asid}}</td>
+            <td>{{userDetail.adminRight}}</td>
+            <td><button ng-click=delUserCtrl.delete1(userDetail.asid) class="btn btn-default">Delete</button></td>
+        </tr>
+
+    </table>
+</div>
+</div>
+   <div ng-if="delUserCtrl.delSuccess == 'true'">
+        <div class='Dsuccess alert-success'>
+            <span>User Deleted Successfully</span>
+        </div>
+</div> 

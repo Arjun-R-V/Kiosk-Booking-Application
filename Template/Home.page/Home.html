@@ -1,0 +1,55 @@
+        <select ng-model="homeCtrl.bookingtype">
+        <option value='{{homeCtrl.assetTypes.KIOSK_ASSET_BOOKING}}' selected>Kiosk Asset Booking</option>
+        <option value='{{homeCtrl.assetTypes.CONFERENCE_ROOM}}'>Conference Room</option>    
+    </select>
+    <br>
+    <br>
+    <div class="bookingType" ng-if="homeCtrl.bookingtype == homeCtrl.assetTypes.KIOSK_ASSET_BOOKING">
+        <input type ="radio" value ='{{homeCtrl.assetTypes.NORMAL_ASSET_BOOKING}}' ng-model="homeCtrl.kioskType" name ="kioskType" checked>Normal Asset Booking
+        <br>
+        <input type ="radio" value ='{{homeCtrl.assetTypes.SPECIAL_ASSET_BOOKING}}' ng-model="homeCtrl.kioskType" name ="kioskType">Special Asset Booking
+    </div>
+    <br>
+    <div class="normalBooking" ng-if="homeCtrl.kioskType == homeCtrl.assetTypes.NORMAL_ASSET_BOOKING && homeCtrl.bookingtype == homeCtrl.assetTypes.KIOSK_ASSET_BOOKING">
+    <h4>Kiosk Time Available</h4>
+<!--    <div class="Normal">
+    <table class="normal">
+    	<tr>
+    		<th>KIOSK</th>
+    	<th ng-repeat="slots in homeCtrl.slot1">
+    	{{slots.from}}<br> to<br> {{slots.to}}
+    	</th>	
+    	</tr>
+        
+    	<td ng-model = "homeCtrl.kioskNo">Kiosk 1</td>        
+    	<td ng-repeat="slots in homeCtrl.slot1">
+    	<button type="button" class="btn btn-default" ng-disabled="slots.b=='yes'" ng-click="homeCtrl.abc(slots,'slot1')">Book</button>
+    	</td>
+        
+     	<tr>
+    	<td ng-model = "homeCtrl.kioskNo">Kiosk 2</td>
+    	<td ng-repeat="slots in homeCtrl.slot2">
+    	<button type="button" class="btn btn-default" ng-disabled="slots.b=='yes'" ng-click="homeCtrl.abc(slots,'slot2')">Book</button>
+    	</td>
+    	</tr>
+    	
+    	<tr>
+    	<td ng-model = "homeCtrl.kioskNo">Kiosk 3</td>
+    	<td ng-repeat="slots in homeCtrl.slot3">
+    	<button type="button" class="btn btn-default" ng-disabled="slots.b=='yes'" ng-click="homeCtrl.abc(slots,'slot3')">Book</button>
+    	</td>
+    	</tr>
+        
+    </table>
+    </div>-->
+        <div>
+            <table>
+                <td>KIOSK APP</td>
+                <td>SOW TRACKER</td>
+                <td>SEAT ALLOCATION</td>
+            </table>
+        </div>
+    </div>
+
+ 
+

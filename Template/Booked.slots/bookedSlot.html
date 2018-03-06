@@ -1,0 +1,71 @@
+<div ng-if="LoginService.errorLogin = 'false'">
+<div class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="changePassword">Change Password</a></li>
+			    <li><a ui-sref="bookedSlot">View Booked Slots</a></li>
+                <li ng-if="bookedSlotCtrl.adminRight == '1'" ><a ui-sref="register">Add User</a></li>
+                <li ng-if="bookedSlotCtrl.adminRight == '1'" ><a ui-sref="deleteUser">Delete User</a></li>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <li>Welcome<br>{{bookedSlotCtrl.asid}}</li>
+                <li><a ng-click="bookedSlotCtrl.logOut()">Log Out</a></li>
+            </div>
+        </div>
+</div>
+<div>
+<form>
+    <div class="bookedSlotSearch">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+        <input type="text" placeholder="Search" ng-model="searchSlot">
+      </div>      
+    </div>
+  </form>
+    <table class="bookedSlot" ng-if="bookedSlotCtrl.bookedSlot.length != 0">
+        <tr>
+            <th>Associate ID</th>
+            <th>Kiosk Booked (Slot 1)</th>
+            <th>Booked Slot (Slot 1)</th>
+            <th>Kiosk Booked (Slot 2)</th>
+            <th>Booked Slot(Slot 2)</th>
+        </tr>
+        <tr ng-repeat = "bookedSlots in bookedSlotCtrl.bookedSlot | orderBy:'asid' | filter:searchSlot">
+
+            <td>{{bookedSlots.asid}}</td>
+            <td>{{bookedSlots.kid}}</td>
+           <!--  <td ng-if="bookedSlots.kid == 'KIOSK1'">No</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK1'">No</td>
+			<td ng-if="bookedSlots.kid == 'KIOSK2'">No</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK2'">{{bookedSlots.kid}}</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK2'">No</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK3'">No</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK3'">No</td>
+            <td ng-if="bookedSlots.kid == 'KIOSK3'">{{bookedSlots.kid}}</td> -->
+            <td>{{bookedSlots.from1}} to {{bookedSlots.to1}}</td>
+    <!--     </tr> -->
+        
+        <!-- <tr ng-repeat = "bookedSlots in bookedSlotCtrl.bookedSlot | orderBy:'kid'" ng-if="bookedSlots.kid2"> -->
+       <!--  <tr ng-repeat = "bookedSlots in bookedSlotCtrl.bookedSlot"> -->
+            <!-- <td ng-if="bookedSlots.kid2">{{bookedSlots.asid}}</td> -->
+            <td ng-if="bookedSlots.kid2">{{bookedSlots.kid2}}</td>
+            <td ng-if="bookedSlots.kid2 == null"> Available </td>
+           <!--  <td ng-if="bookedSlots.kid2 == 'KIOSK1'">No</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK1'">No</td>
+			<td ng-if="bookedSlots.kid2 == 'KIOSK2'">No</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK2'">{{bookedSlots.kid2}}</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK2'">No</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK3'">No</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK3'">No</td>
+            <td ng-if="bookedSlots.kid2 == 'KIOSK3'">{{bookedSlots.kid2}}</td> -->
+            <td ng-if="bookedSlots.kid2">{{bookedSlots.from2}} to {{bookedSlots.to2}}</td>
+            <td ng-if="bookedSlots.kid2 == null"> Available</td>
+        </tr>
+ 
+    </table>
+    <div class="NoBooking" ng-if= "bookedSlotCtrl.bookedSlot.length == 0">
+    	NO SLOTS BOOKED FOR TODAY
+    </div>
+</div>
+</div>

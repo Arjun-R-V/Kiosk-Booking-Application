@@ -1,0 +1,93 @@
+.html
+{
+    width: 100%;
+    height: 100%;
+}
+.navbar{
+    
+    background-color: burlywood; 
+    position: fixed;
+    opacity: 0.5;
+}
+.nav a{
+    
+    color: red;
+    font-weight: 600;
+}
+.nav li{
+    
+    color: red;
+    font-weight: 600;
+}
+.log a
+{
+    float: right;
+    padding-top: 15px;
+}
+.special
+{
+    background-color: #f2f2f7;
+    border:1px solid #ccc;
+    padding : 20px;
+    box-shadow: 10px 20px 10px 10px rgba(0,0,0,0.2); 
+    
+}
+.homeContent
+{
+    margin-left: 40px;
+    margin-top:  4%;  
+}
+.bookingType{
+    color: coral;
+}
+.homeContent h4{
+    color: deepskyblue;
+}
+.homeContent select{
+    color: green;
+    font-weight: bold;
+}
+.normalBooking .time{
+    color: blue;
+    
+}
+.special input{
+/*    background-color: aquamarine;*/
+}
+.special label{
+    color: forestgreen;
+}
+body
+{
+    letter-spacing: 1px;
+    text-rendering: optimizeLegibility;
+}
+.success1{
+/*    margin-top: 50px;*/
+    line-height: 4;
+    margin-bottom: 10px;
+    
+}
+.Hsuccess{
+    line-height: 4;
+    float:right;
+}
+.normalBooking button
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*
+table.normal,td,th{
+	border: 1px solid grey;
+	min-width:140px;
+	min-height:250px;
+}
+*/
+table{
+    float:right;
+}
+table td{
+  border: 1px solid grey;
+    padding: 20px;
+}

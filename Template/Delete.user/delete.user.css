@@ -1,0 +1,29 @@
+table.deleteUSer{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    margin-top: -40px;
+    top : 20px;
+    margin-left: 33%;
+    
+}
+table.deleteUSer th{
+	color: chocolate;
+	border: 1px solid grey;
+	padding:5px;
+}
+table.deleteUSer td{
+	border: 1px solid grey;
+	padding:5px;
+}
+table.deleteUSer tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    color: green;
+}
+table.deleteUSer tr:nth-child(even) {
+    background-color: #ffffff;
+    color : blue;
+}
+.formSearch{
+	margin-top:110px;
+	margin-left: 1100px;
+}
